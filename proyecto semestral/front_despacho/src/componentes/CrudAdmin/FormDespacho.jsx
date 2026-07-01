@@ -12,7 +12,7 @@ export const FormDespacho = ({ venta, onClose }) => {
       fechaDespacho: data.fechaDespacho,
       patenteCamion: data.patenteCamion,
       intento: 0,
-      entregado: false,
+      despachado: false,
       idCompra: venta.idVenta,
       direccionCompra: venta.direccionCompra,
       valorCompra: venta.valorCompra,

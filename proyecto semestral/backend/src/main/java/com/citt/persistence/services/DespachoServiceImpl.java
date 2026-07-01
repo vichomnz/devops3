@@ -28,12 +28,17 @@ public class DespachoServiceImpl implements DespachoService {
     @Override
     public Despacho updateDespacho(Long idDespacho, Despacho despacho) throws DespachoNotFoundException {
         return despachoRepository.findById(idDespacho).map(existingDespacho -> {
-            existingDespacho.setFechaDespacho(despacho.getFechaDespacho());
-            existingDespacho.setPatenteCamion(despacho.getPatenteCamion());
+            if (despacho.getFechaDespacho() != null)
+                existingDespacho.setFechaDespacho(despacho.getFechaDespacho());
+            if (despacho.getPatenteCamion() != null)
+                existingDespacho.setPatenteCamion(despacho.getPatenteCamion());
             existingDespacho.setIntento(despacho.getIntento());
-            existingDespacho.setIdCompra(despacho.getIdCompra());
-            existingDespacho.setDireccionCompra(despacho.getDireccionCompra());
-            existingDespacho.setValorCompra(despacho.getValorCompra());
+            if (despacho.getIdCompra() != null)
+                existingDespacho.setIdCompra(despacho.getIdCompra());
+            if (despacho.getDireccionCompra() != null)
+                existingDespacho.setDireccionCompra(despacho.getDireccionCompra());
+            if (despacho.getValorCompra() != null)
+                existingDespacho.setValorCompra(despacho.getValorCompra());
             existingDespacho.setDespachado(despacho.isDespachado());
             return despachoRepository.save(existingDespacho);
         }).orElseThrow(() -> new DespachoNotFoundException("Despacho no encontrado con ID: " + idDespacho));
