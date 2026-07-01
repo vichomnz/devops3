@@ -7,8 +7,8 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_FRONTEND_REPO: ep3-frontend
-  ECR_BACKEND_REPO: ep3-backend
+  ECR_FRONTEND_REPO: devops3
+  ECR_BACKEND_REPO: devops3back
   ECS_CLUSTER: cluster-ep3
   ECS_FRONTEND_SERVICE: service-frontend
   ECS_BACKEND_SERVICE: service-backend

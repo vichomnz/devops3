@@ -4,12 +4,12 @@
     "requiresCompatibilities": ["FARGATE"],
     "cpu": "256",
     "memory": "512",
-    "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/LabRole",
-    "taskRoleArn": "arn:aws:iam::ACCOUNT_ID:role/LabRole",
+    "executionRoleArn": "arn:aws:iam::559011734298:role/LabRole",
+    "taskRoleArn": "arn:aws:iam::559011734298:role/LabRole",
     "containerDefinitions": [
         {
             "name": "backend",
-            "image": "ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/ep3-backend:latest",
+            "image": "559011734298.dkr.ecr.us-east-1.amazonaws.com/devops3back:latest",
             "essential": true,
             "portMappings": [
                 {
