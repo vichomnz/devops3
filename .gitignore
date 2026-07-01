@@ -1,0 +1,12 @@
+node_modules/
+dist/
+target/
+.DS_Store
+*.log
+.env
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
