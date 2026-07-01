@@ -8,17 +8,18 @@ export const TableDespachos = () => {
   const [despachos, setDespachos] = useState([]);
 
   const despacho = async () => {
-    await axios
-      .get(`${API_URL}/api/v1/despachos`, {
+    try {
+      const response = await axios.get(`${API_URL}/api/v1/despachos`, {
         headers:{
               'Content-Type': 'application/json',
               'Accept': 'application/json'
         }
-      })
-      .then((response) => {
-        console.log(response.data);
-        setDespachos(response.data);
       });
+      console.log(response.data);
+      setDespachos(response.data);
+    } catch (error) {
+      console.error("Error al obtener despachos:", error);
+    }
   };
   // Llamada a la función para obtener los datos cuando el componente se monta
   useEffect(() => {
@@ -41,7 +42,7 @@ export const TableDespachos = () => {
             <table className="table-fixed">
               <thead>
                 <tr className="py-10">
-                  <th className="pr-10">Orden de despacho cambio xd</th>
+                  <th className="pr-10">Orden de despacho</th>
                   <th className="pr-10">Orden de compra</th>
                   <th className="pr-10">Dirección de entrega</th>
                   <th className="pr-10">Fecha despacho</th>
