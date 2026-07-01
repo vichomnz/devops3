@@ -44,7 +44,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build \
-            --build-arg VITE_API_URL=http://backend:3000 \
+            --build-arg VITE_API_URL=http://alb-devops-1779173539.us-east-1.elb.amazonaws.com \
             -t $ECR_REGISTRY/$ECR_FRONTEND_REPO:$IMAGE_TAG \
             -t $ECR_REGISTRY/$ECR_FRONTEND_REPO:latest \
             "${{ env.FRONTEND_PATH }}"
